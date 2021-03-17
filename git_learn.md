@@ -36,3 +36,4 @@ git diff git_learn.md 查询文件被修改的内容
 
 git log 查看修改的历史记录
 
+head 表示当前版本，
