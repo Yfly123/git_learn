@@ -24,6 +24,8 @@ b. git commit -m "write the file"(引号内是解释说明)
 
 ## 3.时光机穿梭(修改文件)
 
+### 3.1版本回退
+
 git status 查询状态
 
 git diff git_learn.md 查询文件被修改的内容
@@ -37,3 +39,16 @@ git diff git_learn.md 查询文件被修改的内容
 git log 查看修改的历史记录
 
 head 表示当前版本，
+
+git reset --hard head^(加上^表示上一个版本)
+
+^^上上一个版本，^^^上上上一个版本，上100个版本head~100
+
+还原原来的某个版本:
+
+​		git reset --hard (commit id)
+
+git reflog 用来记录每一次命令(每次修改的id ,内容)
+
+### 3.2工作区和暂存区
+
