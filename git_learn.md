@@ -98,7 +98,7 @@ git rm test.txt彻底删除文件
 
    ## 5.分支管理
 
-   1. 创建与合并分支
+   1. ### 创建与合并分支
 
       1. ​	git checkout -b dev（创建dev分支）或者:git switch -c dev；-b表示创建并切换
 
@@ -106,7 +106,7 @@ git rm test.txt彻底删除文件
 
          ​								git checkout dev
 
-      2. git branch 查看当前分支
+      2. git branch 查看当前分支，git add.... ;  git commit -m' '...操作后
 
       3. dev完成了就切换至master 分支git checkout master
 
@@ -116,12 +116,20 @@ git rm test.txt彻底删除文件
 
    切换到已有的分支可以用git switch master
 
-   
+   2. ### 解决冲突
 
-   
+   当别的分支和主分支都对同一行文字或者代码进行修改时，保存后会产生争执，好比作文，大家都改结尾或者开头，就叫冲突。
 
-   
+   出现冲突后执行以下两句：
 
-   
+   ​		git add test.txt
 
+   ​		git commit -m 'modify conflict'
+   
+   
+   
+   
+   
+   
+   
    
