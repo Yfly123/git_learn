@@ -62,3 +62,9 @@ git checkout --git_learn.md
 
 **删除文件**
 
+rm test.txt
+
+git restore test.txt恢复删除的文件
+
+git rm test.txt彻底删除文件
+
