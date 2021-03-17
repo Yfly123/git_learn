@@ -1,5 +1,2 @@
-<<<<<<< HEAD
 witch to a new branch 'te' and 'master'
-=======
-witch to a new branch 'te'
->>>>>>> te
+hello modify
