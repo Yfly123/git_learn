@@ -14,7 +14,25 @@ b. Git config --global user.email 'yf6738@126.com'
 
    c.  创建git可以管理的仓库,  git init
 
+## 2.提交文件
+
 把文件放到new_content 目录下
 
-git add Git.mad
+a. git add Git.mad
+
+b. git commit -m "write the file"(引号内是解释说明)
+
+## 3.时光机穿梭(修改文件)
+
+git status 查询状态
+
+git diff git_learn.md 查询文件被修改的内容
+
+提交修改和提交新文件是一样的步骤：
+
+​	a. git add git_learn.md
+
+​	b. git commit -m'modify content'
+
+
 
