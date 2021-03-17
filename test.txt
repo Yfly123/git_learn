@@ -1,2 +1,6 @@
 witch to a new branch 'te' and 'master'
+<<<<<<< HEAD
 hello modify 1Nd lalalal
+=======
+hello modify and 
+>>>>>>> ya
