@@ -98,6 +98,30 @@ git rm test.txt彻底删除文件
 
    ## 5.分支管理
 
+   1. 创建与合并分支
+
+      1. ​	git checkout -b dev（创建dev分支）；-b表示创建并切换
+
+         ​	上面一句相当于:git branch dev 
+
+         ​								git checkout dev
+
+      2. git branch 查看当前分支
+
+      3. dev完成了就切换至master 分支git checkout master
+
+      4. 将dev分支的工作合并到master分支 git merge dev
+
+      5. 合并完成后，删除dev分支   git branch -d dev
+
+   
+
+   
+
+   
+
+   
+
    
 
    
