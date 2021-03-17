@@ -100,7 +100,7 @@ git rm test.txt彻底删除文件
 
    1. 创建与合并分支
 
-      1. ​	git checkout -b dev（创建dev分支）；-b表示创建并切换
+      1. ​	git checkout -b dev（创建dev分支）或者:git switch -c dev；-b表示创建并切换
 
          ​	上面一句相当于:git branch dev 
 
@@ -114,7 +114,7 @@ git rm test.txt彻底删除文件
 
       5. 合并完成后，删除dev分支   git branch -d dev
 
-   
+   切换到已有的分支可以用git switch master
 
    
 
