@@ -126,7 +126,7 @@ git rm test.txt彻底删除文件
 
    ​		git commit -m 'modify conflict'
    
-   3. 分支管理策略
+   3. ### 分支管理策略
    
       合并的时候采用
    
@@ -140,10 +140,30 @@ git rm test.txt彻底删除文件
    
       不同分分支干活，都有自己的分支，时不时往dev分支上合并就可以了
    
-   4. Bug分支
+   4. ### Bug分支
    
+   当前工作过程中，突然遇到另一个BUG需要解决，但是工作没完成，需要保存当前进度，次啊用stash
    
+   git stash  把当前工作现场‘储藏起来’，等以后恢复现场继续工作。
    
+   具体过程:
    
+   1. 当前在dev分支工作，git stash保存现场
    
+   2. 回到master分支，git switch master
    
+   3. 假如在master分支上修复，那么在master创建临时分支，git checkout -b issue-01
+   
+   4. 在issue-01分支上修复BUG，然后提交git add test.txt;git commit -m'fixed issue'
+   
+   5. 修复完成后，切换到master分支，并完成合并，删除issue-01分支
+   
+      git switch master   ;  git merge --no -ff -m'merge issue-01 bug' issue-01
+   
+   6. 回到原来工作的分支dev;   git switch dev
+
+工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：
+
+一是用`git stash apply`恢复，但是恢复后，stash内容并不删除，你需要用`git stash drop`来删除；
+
+另一种方式是用`git stash pop`，恢复的同时把stash内容也删了：
