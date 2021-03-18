@@ -167,3 +167,59 @@ git rm test.txt彻底删除文件
 一是用`git stash apply`恢复，但是恢复后，stash内容并不删除，你需要用`git stash drop`来删除；
 
 另一种方式是用`git stash pop`，恢复的同时把stash内容也删了：
+
+5 多人协作
+
+git remote 查看远程库的信息   git remote -v显示更详细的信息
+
+1.  推送分支
+
+把该分支上所有本地推动到远程库git push origin master origin为远程库
+
+如果要推送其他分支,比如dev ，那就git push origin dev 
+
+- `master`分支是主分支，因此要时刻与远程同步；
+- `dev`分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；
+- bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；
+- feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。
+
+2. 抓取分支
+
+   多人协作的工作模式通常是这样：
+
+   1. 首先，可以试图用`git push origin <branch-name>`推送自己的修改；
+   2. 如果推送失败，则因为远程分支比你的本地更新，需要先用`git pull`试图合并；
+   3. 如果合并有冲突，则解决冲突，并在本地提交；
+   4. 没有冲突或者解决掉冲突后，再用`git push origin <branch-name>`推送就能成功！
+
+   如果`git pull`提示`no tracking information`，则说明本地分支和远程分支的链接关系没有创建，用命令`git branch --set-upstream-to <branch-name> origin/<branch-name>`。
+
+   这就是多人协作的工作模式，一旦熟悉了，就非常简单。
+
+
+
+
+
+## 6.标签管理
+
+### 6.1 创建标签
+
+切换到需要打标签的分支上 git switch master
+
+git tag  v1.0  给最新commit提交的版本打印标签
+
+git tag   查看所有标签
+
+git show v1.0  查看标签
+
+找到历史提交的commit id，然后打上标签
+
+```
+git log --pretty=oneline --abbrev-commit
+```
+
+然后   git tag v1.0 f52c633(commit id)
+
+还可以创建带有说明的标签，用`-a`指定标签名，`-m`指定说明文字：
+
+git tag -a v1.0 -m 'add tag' 10094db(commit id)
