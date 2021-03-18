@@ -210,7 +210,7 @@ git tag  v1.0  给最新commit提交的版本打印标签
 
 git tag   查看所有标签
 
-git show v1.0  查看标签
+git show v1.0  查看标签以及说明文字
 
 找到历史提交的commit id，然后打上标签
 
@@ -223,3 +223,26 @@ git log --pretty=oneline --abbrev-commit
 还可以创建带有说明的标签，用`-a`指定标签名，`-m`指定说明文字：
 
 git tag -a v1.0 -m 'add tag' 10094db(commit id)
+
+### 6.2 操作标签
+
+如果标签错了，可以删除
+
+git tag -d v1.0
+
+推送标签到远程git push origin <tag name>
+
+一次性推送全部尚未推送到远程的本地标签
+
+git push origin --tags
+
+如果标签已经推送到远程了，要删除远程标签先从本地删除
+
+git tag -d v1.0,
+
+然后从远程删除，
+
+```
+git push origin :refs/tags/v1.0
+To github.com:Yfly123/git_test.git
+```
