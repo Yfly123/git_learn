@@ -126,7 +126,21 @@ git rm test.txt彻底删除文件
 
    ​		git commit -m 'modify conflict'
    
+   3. 分支管理策略
    
+      合并的时候采用
+   
+      git merge --no-ff -m'merge with no ff' dev
+   
+      禁用fast forward  
+   
+      master分支十分稳定，用来发布新版本，平时不在上面操作；
+   
+      dev分支不稳定，比如当1.0版本发布时再和master合并，在master上发布
+   
+      不同分分支干活，都有自己的分支，时不时往dev分支上合并就可以了
+   
+   4. Bug分支
    
    
    
