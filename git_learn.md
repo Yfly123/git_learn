@@ -148,11 +148,13 @@ git checkout --git_learn.md
 
 **删除文件**
 
+```
 rm test.txt
 
 git restore test.txt恢复删除的文件
 
 git rm test.txt彻底删除文件
+```
 
 ## 6.远程仓库
 
@@ -177,13 +179,13 @@ git push -u 远程库名 main
    ​	2.首次关联远程库:
 
    ```
-git push -u origin master
+git push -u origin main
    ```
 
    ​     **3.每次修改后可推送到远程仓库**
 
    ```
-git push origin master
+git push origin main
    ```
 
    ​	4.删除远程库与本地库的绑定,远程库本身没有改动
