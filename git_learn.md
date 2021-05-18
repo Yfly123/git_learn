@@ -32,6 +32,7 @@ a. git add git.mad
 
 b. git commit -m "write the file"(引号内是解释说明)
 
+<<<<<<< HEAD
 一次可以提交多个文件
 
 ```
@@ -42,9 +43,74 @@ git commit -m 'change 3 files'
 
 
 
-## 3.时光机穿梭(修改文件)
+## 3.分支管理
+>>>>>>> dev
 
-### 3.1版本回退
+1.列出分支
+
+```
+git branch
+
+  dev
+*master
+```
+
+2.切换到另一个分支(dev)
+
+```
+git checkout dev
+```
+
+3.创建新的分支并进入该分支
+
+```
+git checkout -b new_dev
+```
+
+4.删除分支
+
+```
+git branch -D new_dev
+```
+
+5.分支合并(在master分支中)
+
+​	将分支合并到主分支上
+
+```
+git merge 分支名
+```
+
+6.合并冲突
+
+
+
+## 4.git查看提交历史
+
+1、git log 
+
+```
+git log --oneline  查看历史纪录的简洁版本
+git log --graph   查看历史中什么时候出现了分支、合并
+git log --reverse  逆向显示所有的日志
+git log --author=yangf --oneline -5   只想查找指定用户的提交日志可以使用命令
+```
+
+指定日期，可以执行几个选项：--since 和 --before，但是你也可以用 --until 和 --after。 --no-merges 选项以隐藏合并提交
+
+```
+git log --oneline --before={3.weeks.ago} --after={2010-04-18} --no-merges
+```
+
+2、查看指定文件的修改记录
+
+git blame file_name
+
+以列表形式显示修改记录
+
+## 5.时光机穿梭(修改文件)
+
+### 5.1版本回退
 
 git status 查询状态
 
@@ -70,7 +136,7 @@ git reset --hard head^(加上^表示上一个版本)
 
 git reflog 用来记录每一次命令(每次修改的id ,内容)
 
-### 3.2工作区和暂存区
+### 5.2工作区和暂存区
 
 **撤销修改**
 
@@ -88,7 +154,7 @@ git restore test.txt恢复删除的文件
 
 git rm test.txt彻底删除文件
 
-## 4.远程仓库
+## 6.远程仓库
 
 1. ### 配置
 
@@ -220,9 +286,9 @@ git remote 查看远程库的信息   git remote -v显示更详细的信息
 
 
 
-## 6.标签管理
+## 7.标签管理
 
-### 6.1 创建标签
+### 7.1 创建标签
 
 切换到需要打标签的分支上 git switch master
 
@@ -244,7 +310,7 @@ git log --pretty=oneline --abbrev-commit
 
 git tag -a v1.0 -m 'add tag' 10094db(commit id)
 
-### 6.2 操作标签
+### 7.2 操作标签
 
 如果标签错了，可以删除
 
