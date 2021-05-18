@@ -28,6 +28,9 @@ b. git commit -m "write the file"(引号内是解释说明)
 
 ```
 git branch
+
+  dev
+*master
 ```
 
 2.切换到另一个分支(dev)
@@ -35,6 +38,20 @@ git branch
 ```
 git checkout dev
 ```
+
+3.创建新的分支并进入该分支
+
+```
+git checkout -b new_dev
+```
+
+4.删除分支
+
+```
+git branch -d new_dev
+```
+
+
 
 
 
