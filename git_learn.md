@@ -22,9 +22,25 @@ a. git add Git.mad
 
 b. git commit -m "write the file"(引号内是解释说明)
 
-## 3.时光机穿梭(修改文件)
+## 3.分支管理
 
-### 3.1版本回退
+1.列出分支
+
+```
+git branch
+```
+
+2.切换到另一个分支(dev)
+
+```
+git checkout dev
+```
+
+
+
+## 4.时光机穿梭(修改文件)
+
+### 4.1版本回退
 
 git status 查询状态
 
@@ -50,7 +66,7 @@ git reset --hard head^(加上^表示上一个版本)
 
 git reflog 用来记录每一次命令(每次修改的id ,内容)
 
-### 3.2工作区和暂存区
+### 4.2工作区和暂存区
 
 **撤销修改**
 
@@ -68,7 +84,7 @@ git restore test.txt恢复删除的文件
 
 git rm test.txt彻底删除文件
 
-## 4.远程仓库
+## 5.远程仓库
 
 1. ### 配置
 
