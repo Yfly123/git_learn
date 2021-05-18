@@ -160,21 +160,27 @@ git rm test.txt彻底删除文件
 
    git-bash中输入：ssh-keygen -t rsa -C '邮箱'
 
-   id_rsa是私钥;  id_rsa.pub是公钥
+   ​		id_rsa是私钥;  id_rsa.pub是公钥
 
    把公钥添加到Github中
 
    2.把本地仓库与Github库连接
 
-   按照github提示，在本地的仓库下运行:git remote add 远程仓库名 git@.....
+   ​	按照github提示，在本地的仓库下运行:git remote add 远程仓库名 git@.....
 
-   首次关联远程库:git push -u origin(远程库名字)  master
+   ```
+git remote add 远程库名 git@github.com:Yfly123/git_learn.git
+   git branch -M main
+git push -u 远程库名 main
+   ```
 
-   git push origin(远程库名字)  master每次修改后可推送到远程仓库
+   ​	首次关联远程库:git push -u origin(远程库名字)  master
 
-   git remote rm 远程库名字     删除远程库与本地库的绑定,远程库本身没有改动
+   ​	git push origin(远程库名字)  master每次修改后可推送到远程仓库
 
-   git remote -v 查看远程库信息
+   ​	git remote rm 远程库名字     删除远程库与本地库的绑定,远程库本身没有改动
+
+   ​	git remote -v 查看远程库信息
 
    ### 2.从远程库克隆
 
@@ -205,11 +211,11 @@ git rm test.txt彻底删除文件
    当别的分支和主分支都对同一行文字或者代码进行修改时，保存后会产生争执，好比作文，大家都改结尾或者开头，就叫冲突。
 
    出现冲突后执行以下两句：
-
+   
    ​		git add test.txt
-
+   
    ​		git commit -m 'modify conflict'
-
+   
    3. ### 分支管理策略
    
       合并的时候采用
