@@ -18,7 +18,7 @@ b. Git config --global user.email 'yf6738@126.com'
 
 把文件放到new_content 目录下
 
-a. git add Git.mad
+a. git add git.mad
 
 b. git commit -m "write the file"(引号内是解释说明)
 
@@ -94,8 +94,6 @@ git rm test.txt彻底删除文件
 
    git clone git@github.com:name/库名.git
 
-   
-
    ## 5.分支管理
 
    1. ### 创建与合并分支
@@ -125,12 +123,14 @@ git rm test.txt彻底删除文件
    ​		git add test.txt
 
    ​		git commit -m 'modify conflict'
-   
+
    3. ### 分支管理策略
    
       合并的时候采用
    
+      ```
       git merge --no-ff -m'merge with no ff' dev
+      ```
    
       禁用fast forward  
    
@@ -228,21 +228,30 @@ git tag -a v1.0 -m 'add tag' 10094db(commit id)
 
 如果标签错了，可以删除
 
-git tag -d v1.0
+```
+git tag -d v1.0q
+```
 
-推送标签到远程git push origin <tag name>
+推送标签到远程
+
+```
+git push origin <tag name>
+```
 
 一次性推送全部尚未推送到远程的本地标签
 
+```
 git push origin --tags
+```
 
 如果标签已经推送到远程了，要删除远程标签先从本地删除
 
+```
 git tag -d v1.0,
+```
 
 然后从远程删除，
 
 ```
 git push origin :refs/tags/v1.0
-To github.com:Yfly123/git_test.git
 ```
