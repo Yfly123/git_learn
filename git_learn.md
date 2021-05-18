@@ -13,6 +13,16 @@ b. Git config --global user.email 'yf6738@126.com'
    pwd 用于显示当前目录
 
    c.  创建git可以管理的仓库,  git init
+   
+3. 创建一个仓库:
+
+   ```
+   1、mkdir temp_respo
+   2、进入该目录cd temp_respo
+   3、git init 把该目录变成git可以管理的仓库
+   ```
+
+   
 
 ## 2.提交文件
 
@@ -21,6 +31,16 @@ b. Git config --global user.email 'yf6738@126.com'
 a. git add git.mad
 
 b. git commit -m "write the file"(引号内是解释说明)
+
+一次可以提交多个文件
+
+```
+git add file1.txt
+git add file2.txt file3.txt
+git commit -m 'change 3 files'
+```
+
+
 
 ## 3.时光机穿梭(修改文件)
 
