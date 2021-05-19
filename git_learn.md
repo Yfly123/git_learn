@@ -112,9 +112,17 @@ git blame file_name
 
 ### 5.1版本回退
 
-git status 查询状态
+1. 查询状态
 
-git diff git_learn.md 查询文件被修改的内容
+```
+git status 
+```
+
+  2.查询文件被修改的内容
+
+```
+git diff git_learn.md 
+```
 
 提交修改和提交新文件是一样的步骤：
 
@@ -122,19 +130,35 @@ git diff git_learn.md 查询文件被修改的内容
 
 ​	b. git commit -m'modify content'
 
-git log 查看修改的历史记录
+  3.查看修改的历史记录
 
-head 表示当前版本，
+```
+git log
+```
 
+   4.查看历史命令
+
+```
+git reflog
+```
+
+   5.版本回退
+
+head 表示当前版本
+
+```
 git reset --hard head^(加上^表示上一个版本)
+```
 
 ^^上上一个版本，^^^上上上一个版本，上100个版本head~100
 
-还原原来的某个版本:
+   6.暂存区的内容被commit到了仓库，怎么回退
 
-​		git reset --hard (commit id)
+```
 
-git reflog 用来记录每一次命令(每次修改的id ,内容)
+```
+
+
 
 ### 5.2工作区和暂存区
 
