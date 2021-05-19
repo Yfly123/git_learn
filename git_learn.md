@@ -158,6 +158,13 @@ git reset --hard head^(加上^表示上一个版本)
 
 ```
 
+   7.修改的内容在工作区未add到暂存区，怎么删除工作区内容
+
+```
+git checkout --filename
+例如:git chekout --test.txt
+```
+
 
 
 ### 5.2工作区和暂存区
