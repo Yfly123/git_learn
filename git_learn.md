@@ -46,6 +46,8 @@ git commit -m 'change 3 files'
 ## 3.分支管理
 >>>>>>> dev
 
+### 3.1创建与合并分支
+
 1.列出分支
 
 ```
@@ -95,7 +97,56 @@ git switch -c new_dev
 git switch master
 ```
 
-6.合并冲突
+### 3.2分支冲突
+
+**6.合并冲突**
+
+问题描述：new_dev分支在test.txt中修改为:shanghai
+
+git switch -c new_dev
+
+```
+git add test.txt
+git commit -m"add shanghai"
+```
+
+​					main 主分支中修改test.txt为：shangshan
+
+```
+git add test.txt
+git commit -m"modify shangshan"
+```
+
+git switch main
+
+main 分支中合并分支
+
+```
+git merge new_dev
+```
+
+出现以下问题：
+
+```
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+git status 查看冲突
+
+**解决冲突**
+
+```
+git add test.txt
+git commit -m"conflict fixed"
+```
+
+### 3.3分支管理策略
+
+通常，合并分支时，如果可能，Git会用`Fast forward`模式，但这种模式下，删除分支后，会丢掉分支信息。
+
+合并分支时，加上`--no-ff`参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而`fast forward`合并就看不出来曾经做过合并。
 
 
 
@@ -108,6 +159,7 @@ git log --oneline  查看历史纪录的简洁版本
 git log --graph   查看历史中什么时候出现了分支、合并
 git log --reverse  逆向显示所有的日志
 git log --author=yangf --oneline -5   只想查找指定用户的提交日志可以使用命令
+git log --graph --pretty=oneline --abbrev-commit 分支形式查看
 ```
 
 指定日期，可以执行几个选项：--since 和 --before，但是你也可以用 --until 和 --after。 --no-merges 选项以隐藏合并提交
@@ -142,9 +194,10 @@ git diff git_learn.md
 
 提交修改和提交新文件是一样的步骤：
 
-​	a. git add git_learn.md
-
-​	b. git commit -m'modify content'
+```
+a. git add git_learn.md
+b. git commit -m “modify content”
+```
 
   3.查看修改的历史记录
 
