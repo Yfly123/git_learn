@@ -81,6 +81,20 @@ git branch -D new_dev
 git merge 分支名
 ```
 
+6.新版分支切换命令switch
+
+创建并切换到分支
+
+```
+git switch -c new_dev
+```
+
+切换到已有的分支
+
+```
+git switch master
+```
+
 6.合并冲突
 
 
