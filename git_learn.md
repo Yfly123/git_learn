@@ -104,7 +104,9 @@ git log --oneline --before={3.weeks.ago} --after={2010-04-18} --no-merges
 
 2、查看指定文件的修改记录
 
+```
 git blame file_name
+```
 
 以列表形式显示修改记录
 
@@ -152,17 +154,27 @@ git reset --hard head^(加上^表示上一个版本)
 
 ^^上上一个版本，^^^上上上一个版本，上100个版本head~100
 
-   6.暂存区的内容被commit到了仓库，怎么回退
+   **6.暂存区的内容被commit到了仓库，怎么回退**
 
 ```
-
+回退到上一次版本：
+git reset --hard HEAD^
+回退到某一个commit id 时
+git reset --hard commit_id
 ```
 
-   7.修改的内容在工作区未add到暂存区，怎么删除工作区内容
+   **7.修改的内容在工作区未add到暂存区，怎么删除工作区内容**
 
 ```
-git checkout --filename
-例如:git chekout --test.txt
+git checkout -- filename
+例如:git chekout -- test.txt
+```
+
+   **8.修改的内容被add到了暂存区还未被commit**
+
+```
+首先:git reset HEAD test.txt   将暂存区的内容退回到工作区
+接着:git checkout -- test.txt  将工作区的内容删除
 ```
 
 
@@ -181,11 +193,21 @@ git checkout --git_learn.md
 
 ```
 rm test.txt
-
-git restore test.txt恢复删除的文件
-
-git rm test.txt彻底删除文件
 ```
+
+1、删除工作区文件后，同时删除版本库中的文件，不恢复
+
+```
+git rm test.txt
+```
+
+2、删除工作区文件后，想恢复，即将版本库中的文件恢复到工作区
+
+```
+git checkout test.txt
+```
+
+
 
 ## 6.远程仓库
 
