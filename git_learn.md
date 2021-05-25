@@ -148,6 +148,99 @@ git commit -m"conflict fixed"
 
 合并分支时，加上`--no-ff`参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而`fast forward`合并就看不出来曾经做过合并。
 
+### 3.4Bug分支
+
+当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支`issue-101`来修复它，但是，当前正在`dev`上进行的工作还没有提交：
+
+```
+git stash 
+```
+
+把当前工作现场储存起来，等以后恢复现场后继续工作。
+
+修复bug后，在main分支上add   commit 后合并分支并删除修复bug用的分支
+
+返回到之前的工作区
+
+git switch dev
+
+git status 发现工作区是干净的
+
+返回之前的工作现场
+
+```
+git stash list
+```
+
+恢复工作现场
+
+1、方法一
+
+```
+git stash apply   stash 内容并不会被删除
+git stash drop    删除stash内容
+```
+
+2、方法二
+
+```
+git stash pop
+```
+
+恢复后git stash list就看不到任何内容
+
+恢复指定的stash
+
+```
+git stash apply stash@{0}
+```
+
+main分支完成后，需要修复dev分支相同的bug
+
+通过
+
+```
+git cherry-pick  commit命令（main 分支修复后的commit码）   
+```
+
+复制特定的提交到当前分支，这样就不需要在dev分支上手动再把修bug的过程重复一遍。
+
+### 3.4 feature分支
+
+软件开发中，总有无穷无尽的新的功能要不断添加进来。
+
+添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱了，所以，每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。
+
+在feature分支上完成了开发后
+
+```
+git switch main
+```
+
+main主分支未和feature分支进行合并，此时不需要该分支开发二功能，想删除feature分支(强行删除)
+
+```
+git branch -D feature
+```
+
+### 3.5多人协作
+
+推送分支
+
+ 把本地库该分支提交到远程库
+
+```
+git push origin main
+```
+
+如果提交其他分支
+
+```
+git push origin dev
+```
+
+抓取分支
+
 
 
 ## 4.git查看提交历史
