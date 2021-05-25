@@ -241,7 +241,14 @@ git push origin dev
 
 抓取分支
 
+```
+git clone git@github.com:michaelliao/learngit.git
+```
 
+- 从本地推送分支，使用`git push origin branch-name`，如果推送失败，先用`git pull`抓取远程的新提交；
+- 在本地创建和远程分支对应的分支，使用`git checkout -b branch-name origin/branch-name`，本地和远程分支的名称最好一致；
+- 建立本地分支和远程分支的关联，使用`git branch --set-upstream branch-name origin/branch-name`；
+- 从远程抓取分支，使用`git pull`，如果有冲突，要先处理冲突。
 
 ## 4.git查看提交历史
 
@@ -561,11 +568,17 @@ git show v1.0  查看标签以及说明文字
 git log --pretty=oneline --abbrev-commit
 ```
 
-然后   git tag v1.0 f52c633(commit id)
+然后   
+
+```
+git tag v1.0 f52c633(commit id)
+```
 
 还可以创建带有说明的标签，用`-a`指定标签名，`-m`指定说明文字：
 
+```
 git tag -a v1.0 -m 'add tag' 10094db(commit id)
+```
 
 ### 7.2 操作标签
 
