@@ -39,9 +39,9 @@ b. git commit -m "write the file"(引号内是解释说明)
 git add file1.txt
 git add file2.txt file3.txt
 git commit -m 'change 3 files'
+提交所有文件
+git comiit -am "commit all files"
 ```
-
-
 
 ## 3.分支管理
 >>>>>>> dev
